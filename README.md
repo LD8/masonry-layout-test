@@ -1,7 +1,11 @@
 # Mansonry Layout
+
 This project is a simple website built for Wiredcraft front-end position only.
 
+The project is published on [Github Pages](https://ld8.github.io/masonry-layout-test/)
+
 ## Declaration
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
