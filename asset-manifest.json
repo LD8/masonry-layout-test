@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/masonry-layout-test/static/css/main.e5773b61.chunk.css",
+    "main.js": "/masonry-layout-test/static/js/main.5816c12e.chunk.js",
+    "main.js.map": "/masonry-layout-test/static/js/main.5816c12e.chunk.js.map",
+    "runtime-main.js": "/masonry-layout-test/static/js/runtime-main.25168a15.js",
+    "runtime-main.js.map": "/masonry-layout-test/static/js/runtime-main.25168a15.js.map",
+    "static/js/2.1a163a9f.chunk.js": "/masonry-layout-test/static/js/2.1a163a9f.chunk.js",
+    "static/js/2.1a163a9f.chunk.js.map": "/masonry-layout-test/static/js/2.1a163a9f.chunk.js.map",
+    "index.html": "/masonry-layout-test/index.html",
+    "static/css/main.e5773b61.chunk.css.map": "/masonry-layout-test/static/css/main.e5773b61.chunk.css.map",
+    "static/js/2.1a163a9f.chunk.js.LICENSE.txt": "/masonry-layout-test/static/js/2.1a163a9f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.25168a15.js",
+    "static/js/2.1a163a9f.chunk.js",
+    "static/css/main.e5773b61.chunk.css",
+    "static/js/main.5816c12e.chunk.js"
+  ]
+}
