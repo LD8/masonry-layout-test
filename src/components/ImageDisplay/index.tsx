@@ -1,19 +1,11 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
-import Masonry from 'react-masonry-css'
+// import Masonry from 'react-masonry-css'
 import styled from 'styled-components'
 import getImgList from '../../api/getImgList'
 import { ImgList } from '../../api/interfaces'
 import useSearchModel from '../../models/search'
 import Image from './components/Image'
-
-const breakpointColumnsObj = {
-  default: 6,
-  1800: 5,
-  1500: 4,
-  1100: 3,
-  800: 2,
-  600: 1,
-}
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry'
 
 const ImageDisplay = () => {
   const [imgList, setImgList] = useState<ImgList>([])
@@ -38,16 +30,12 @@ const ImageDisplay = () => {
   }, [searchValue, imgList])
 
   return (
-    <ImageContainer>
-      <StyledMasonry
-        breakpointCols={breakpointColumnsObj}
-        className='grid'
-        columnClassName='grid-column'
-      >
+    <ImageContainer
+      columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3, 1200: 4, 1500: 5 }}
+    >
+      <StyledMasonry>
         {filteredList.map(({ _id, name, src }) => (
-          <div key={_id}>
-            <Image alt={name} src={src} />
-          </div>
+          <Image key={_id} alt={name} src={src} />
         ))}
       </StyledMasonry>
     </ImageContainer>
@@ -56,44 +44,29 @@ const ImageDisplay = () => {
 
 export default ImageDisplay
 
-const ImageContainer = styled.div`
+const ImageContainer = styled(ResponsiveMasonry)`
   display: flex;
   justify-content: center;
   margin-top: 20px;
   width: 100%;
-  max-width: 1600px;
+  max-width: 1500px;
 `
 
 const StyledMasonry = styled(Masonry)`
   display: flex;
-  margin-left: -20px; /* gutter size offset */
   width: auto;
-  .grid-column {
-    padding-left: 20px; /* gutter size */
-    background-clip: padding-box;
-    > div {
-      margin-bottom: 20px;
-      > img {
-        width: 100%;
-        border-radius: var(--border-rounded);
-        box-shadow: 0 0 8px var(--shadow-color);
-        transition: box-shadow 0.2s ease-in-out;
-        :hover {
-          cursor: pointer;
-          box-shadow: none;
-        }
-      }
-    }
-  }
-
-  @media (max-width: 800px) {
-    .grid {
-      margin-left: -10px; /* gutter size offset */
-      &-column {
-        padding-left: 10px; /* gutter size offset */
-        > div {
-          margin-bottom: 10px; /* space between items */
-        }
+  padding-left: 16px; /* gutter size */
+  background-clip: padding-box;
+  > div > div {
+    padding: 16px;
+    img {
+      width: 100%;
+      border-radius: var(--border-rounded);
+      box-shadow: 0 0 8px var(--shadow-color);
+      transition: box-shadow 0.2s ease-in-out;
+      :hover {
+        cursor: pointer;
+        box-shadow: none;
       }
     }
   }

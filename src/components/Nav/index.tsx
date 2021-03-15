@@ -2,12 +2,13 @@ import React from 'react'
 import styled from 'styled-components'
 import Input from './components/Input'
 import { BsFillHouseFill, BsBellFill, BsPeopleCircle } from 'react-icons/bs'
+import Logo from '../../assets/img/logo.png'
 
 const Nav: React.FC = () => {
   return (
     <StyledNav>
       <div className='logo'>
-        <img src='/logo.png' alt='logo' />
+        <img src={Logo} alt='logo' />
         <span>Mansonry Layout</span>
       </div>
       <div>
